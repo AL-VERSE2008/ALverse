@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALverse | Ideas Worth Sharing</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4faff;
+            color: #25304a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(120deg, #6757f5, #16c6d6, #ff78a8);
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        nav {
+            background: white;
+            padding: 14px 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px #dce7f2;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #6255df;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px 9px;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 25px auto;
+            padding: 15px;
+        }
+
+        .intro {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 22px;
+            box-shadow: 0 5px 20px #e0eafa;
+        }
+
+        .intro h2 {
+            color: #6255df;
+            margin-bottom: 10px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 23px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px #e0eafa;
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #fff0f6, #f0edff);
+            border-left: 5px solid #ff70a6;
+        }
+
+        .quote blockquote {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 12px 0;
+            color: #6255df;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8e5ff;
+            color: #6255df;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .post {
+            border-bottom: 1px solid #e5eaf3;
+            padding: 12px 0;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post h3 {
+            color: #6255df;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            background: #252b54;
+            color: white;
+            padding: 22px 10px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 650px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌈 ALverse</h1>
+        <p>Ideas worth sharing. Knowledge worth discovering.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#quote">Quotes</a>
+        <a href="#publications">Latest Notes</a>
+        <a href="#categories">Explore</a>
+    </nav>
+
+    <main id="home">
+        <section class="intro">
+            <h2>Welcome to ALverse!</h2>
+            <p>
+                A colourful space for ideas, knowledge, creativity and discovery.
+                Explore engineering, programming, interesting facts, life thoughts,
+                recipes, research and much more.
+            </p>
+        </section>
+
+        <div class="layout">
+            <section class="card quote" id="quote">
+                <span class="tag">QUOTE OF THE DAY</span>
+                <blockquote>
+                    "Every expert was once a beginner who refused to give up."
+                </blockquote>
+                <p>Keep learning. Keep creating. Keep growing.</p>
+            </section>
+
+            <section class="card" id="publications">
+                <span class="tag">RECENT PUBLICATIONS</span>
+                <h2>Latest Notes</h2>
+
+                <article class="post">
+                    <h3>Welcome to ALverse</h3>
+                    <p>
+                        This is the beginning of a journey filled with ideas,
+                        learning and creativity.
+                    </p>
+                </article>
+
+                <article class="post">
+                    <h3>Why Learn Programming?</h3>
+                    <p>
+                        Programming helps us turn ideas into useful digital tools
+                        and real-world solutions.
+                    </p>
+                </article>
+
+                <article class="post">
+                    <h3>The Future of Engineering</h3>
+                    <p>
+                        Discover how engineering, renewable energy and technology
+                        can help solve real-world problems.
+                    </p>
+                </article>
+            </section>
+        </div>
+
+        <section class="card" id="categories">
+            <h2>Explore ALverse 🌟</h2>
+            <p>
+                Life Thoughts · Quotes · Interesting Facts · Programming ·
+                Hackathon Ideas · Recipes · Research · Engineering ·
+                AI & Technology · Learning Notes
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 ALverse | Ideas worth sharing. Knowledge worth discovering.</p>
+        <p>Built with curiosity and creativity.</p>
+    </footer>
+
+</body>
+</html>
