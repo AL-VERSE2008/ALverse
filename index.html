@@ -1,220 +1,314 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ALverse | Ideas Worth Sharing</title>
+
+    <meta name="description"
+          content="ALverse is a colourful space for engineering, programming, ideas, research, quotes and knowledge.">
+
     <style>
+        :root {
+            --purple: #6855ef;
+            --blue: #4389f5;
+            --cyan: #08c9d0;
+            --pink: #ff65ad;
+            --text: #293650;
+            --background: #f2f9ff;
+            --white: #ffffff;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f4faff;
-            color: #25304a;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.7;
+        }
+
+        /* COLOURFUL HEADER */
+
+        .hero {
+            padding: 35px 18px 38px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(
+                115deg,
+                #6255f5 0%,
+                #168fe9 30%,
+                #05c9ce 60%,
+                #ff70bb 100%
+            );
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        /* CUSTOM AL LOGO */
+
+        .logo {
+            width: 95px;
+            height: 95px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 5px 5px rgba(40, 45, 120, 0.22));
+        }
+
+        .brand h1 {
+            font-size: clamp(36px, 7vw, 58px);
+            line-height: 1.15;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .tagline {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: clamp(17px, 3.5vw, 24px);
             line-height: 1.6;
         }
 
-        header {
-            background: linear-gradient(120deg, #6757f5, #16c6d6, #ff78a8);
-            color: white;
-            text-align: center;
-            padding: 35px 15px;
-        }
-
-        header h1 {
-            font-size: 42px;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            margin-top: 8px;
-            font-size: 16px;
-        }
+        /* NAVIGATION */
 
         nav {
-            background: white;
-            padding: 14px 10px;
-            text-align: center;
-            box-shadow: 0 3px 12px #dce7f2;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 13px 8px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 4px 18px rgba(75, 100, 150, 0.09);
         }
 
         nav a {
-            display: inline-block;
-            color: #6255df;
+            padding: 5px 12px;
+            color: var(--purple);
             text-decoration: none;
             font-weight: bold;
-            margin: 5px 9px;
+            font-size: 16px;
+            border-radius: 10px;
         }
+
+        nav a:hover {
+            background: #eeeaff;
+        }
+
+        /* MAIN CONTENT */
 
         main {
-            max-width: 1050px;
-            margin: 25px auto;
-            padding: 15px;
-        }
-
-        .intro {
-            background: white;
-            border-radius: 18px;
-            padding: 25px;
-            margin-bottom: 22px;
-            box-shadow: 0 5px 20px #e0eafa;
-        }
-
-        .intro h2 {
-            color: #6255df;
-            margin-bottom: 10px;
-        }
-
-        .layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            width: min(1100px, 100%);
+            margin: auto;
+            padding: 30px 22px;
         }
 
         .card {
-            background: white;
-            padding: 23px;
-            border-radius: 18px;
-            box-shadow: 0 5px 20px #e0eafa;
-            margin-bottom: 20px;
+            margin-bottom: 26px;
+            padding: 28px;
+            border-radius: 27px;
+            background: var(--white);
+            box-shadow: 0 9px 28px rgba(100, 145, 200, 0.10);
         }
 
-        .quote {
-            background: linear-gradient(135deg, #fff0f6, #f0edff);
-            border-left: 5px solid #ff70a6;
+        .intro h2 {
+            margin-bottom: 12px;
+            color: var(--purple);
+            font-size: clamp(25px, 5vw, 36px);
         }
 
-        .quote blockquote {
-            font-size: 21px;
-            font-weight: bold;
-            margin: 12px 0;
-            color: #6255df;
+        .intro p {
+            font-size: 19px;
         }
 
-        .tag {
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        /* QUOTE CARD */
+
+        .quote-card {
+            border-left: 8px solid var(--pink);
+            background: linear-gradient(
+                135deg,
+                #fff0f8,
+                #f2eaff
+            );
+        }
+
+        .label {
             display: inline-block;
-            background: #e8e5ff;
-            color: #6255df;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
+            padding: 5px 15px;
+            border-radius: 30px;
+            color: var(--purple);
+            background: #e9e3ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .quote-card blockquote {
+            margin-bottom: 14px;
+            color: var(--purple);
+            font-size: clamp(21px, 4vw, 29px);
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .quote-card p {
+            font-size: 18px;
+        }
+
+        /* RECENT PUBLICATIONS */
+
+        .notes-card h2,
+        .categories h2 {
+            margin-bottom: 15px;
+            color: var(--purple);
+            font-size: 27px;
         }
 
         .post {
-            border-bottom: 1px solid #e5eaf3;
-            padding: 12px 0;
+            padding: 17px 0;
+            border-bottom: 1px solid #e8eaf3;
         }
 
         .post:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
 
         .post h3 {
-            color: #6255df;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            color: #4f68df;
+            font-size: 20px;
         }
+
+        .post p {
+            font-size: 16px;
+        }
+
+        .post-date {
+            margin-top: 7px;
+            color: #78829a;
+            font-size: 13px;
+        }
+
+        /* CATEGORIES */
+
+        .categories {
+            margin-top: 5px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .category {
+            padding: 18px 15px;
+            border-radius: 18px;
+            text-align: center;
+            font-weight: bold;
+            color: #4e43bb;
+            background: linear-gradient(135deg, #eeebff, #e8faff);
+        }
+
+        .category:nth-child(3n + 2) {
+            color: #b63879;
+            background: linear-gradient(135deg, #fff0f6, #fff5e5);
+        }
+
+        .category:nth-child(3n) {
+            color: #167b81;
+            background: linear-gradient(135deg, #e3fffa, #e9f2ff);
+        }
+
+        /* FOOTER */
 
         footer {
+            padding: 28px 18px;
             text-align: center;
-            background: #252b54;
             color: white;
-            padding: 22px 10px;
-            margin-top: 30px;
+            background: linear-gradient(110deg, #4d45b9, #6556e8);
         }
+
+        footer p + p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        /* MOBILE DESIGN */
 
         @media (max-width: 650px) {
-            header h1 {
-                font-size: 34px;
+            .hero {
+                padding: 30px 12px 32px;
             }
 
-            .layout {
+            .brand {
+                gap: 10px;
+            }
+
+            .logo {
+                width: 76px;
+                height: 76px;
+            }
+
+            .brand h1 {
+                font-size: 37px;
+            }
+
+            nav {
+                gap: 3px;
+                padding: 12px 4px;
+            }
+
+            nav a {
+                padding: 5px 9px;
+                font-size: 14px;
+            }
+
+            main {
+                padding: 24px 17px;
+            }
+
+            .card {
+                padding: 23px;
+                border-radius: 24px;
+                margin-bottom: 23px;
+            }
+
+            .content-grid {
                 grid-template-columns: 1fr;
+                gap: 0;
             }
-        }
-    </style>
-</head>
-<body>
 
-    <header>
-        <h1>🌈 ALverse</h1>
-        <p>Ideas worth sharing. Knowledge worth discovering.</p>
-    </header>
+            .intro p {
+                font-size: 17px;
+            }
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#quote">Quotes</a>
-        <a href="#publications">Latest Notes</a>
-        <a href="#categories">Explore</a>
-    </nav>
-
-    <main id="home">
-        <section class="intro">
-            <h2>Welcome to ALverse!</h2>
-            <p>
-                A colourful space for ideas, knowledge, creativity and discovery.
-                Explore engineering, programming, interesting facts, life thoughts,
-                recipes, research and much more.
-            </p>
-        </section>
-
-        <div class="layout">
-            <section class="card quote" id="quote">
-                <span class="tag">QUOTE OF THE DAY</span>
-                <blockquote>
-                    "Every expert was once a beginner who refused to give up."
-                </blockquote>
-                <p>Keep learning. Keep creating. Keep growing.</p>
-            </section>
-
-            <section class="card" id="publications">
-                <span class="tag">RECENT PUBLICATIONS</span>
-                <h2>Latest Notes</h2>
-
-                <article class="post">
-                    <h3>Welcome to ALverse</h3>
-                    <p>
-                        This is the beginning of a journey filled with ideas,
-                        learning and creativity.
-                    </p>
-                </article>
-
-                <article class="post">
-                    <h3>Why Learn Programming?</h3>
-                    <p>
-                        Programming helps us turn ideas into useful digital tools
-                        and real-world solutions.
-                    </p>
-                </article>
-
-                <article class="post">
-                    <h3>The Future of Engineering</h3>
-                    <p>
-                        Discover how engineering, renewable energy and technology
-                        can help solve real-world problems.
-                    </p>
-                </article>
-            </section>
-        </div>
-
-        <section class="card" id="categories">
-            <h2>Explore ALverse 🌟</h2>
-            <p>
-                Life Thoughts · Quotes · Interesting Facts · Programming ·
-                Hackathon Ideas · Recipes · Research · Engineering ·
-                AI & Technology · Learning Notes
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2026 ALverse | Ideas worth sharing. Knowledge worth discovering.</p>
-        <p>Built with curiosity and creativity.</p>
-    </footer>
-
-</body>
-</html>
+            .category-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px
